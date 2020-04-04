@@ -1,0 +1,91 @@
+.ant-layout {
+  background-color: #f0f5fa;
+  height: 100vh;
+}
+
+.ant-layout-header {
+  background-color: #f0f5fa;
+  color: #fff;
+  height: 10vh;
+  padding: 0 16px;
+}
+
+.ant-layout-header .header-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.ant-layout-footer {
+  background: #f0f5fa;
+  color: #fff;
+  line-height: 1.5;
+  bottom: 0;
+  height: 10vh;
+}
+
+.ant-layout-sider {
+  background-color: #ffffff;
+  color: #fff;
+  line-height: 120px;
+  height: 100vh;
+}
+
+.ant-layout-sider .sider-container {
+  padding-left: 15px;
+  font-size: 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.ant-layout-sider .sider-container img {
+  padding-top: 60px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+}
+
+.ant-layout-sider .sider-container .name-avatar {
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  color: #A0AFBC;
+  padding-bottom: 15px;
+  padding-left: 25px;
+}
+
+.ant-layout-sider .sider-container .afiliation-avatar {
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  color: #A0AFBC;
+  padding-bottom: 30px;
+  padding-left: 25px;
+}
+
+.ant-layout-content {
+  background: #f0f5fa;
+  color: #fff;
+  line-height: 120px;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+  background-color: unset;
+}
+
+.footer {
+  bottom: 0;
+  color: #96a8b7;
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .menus {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer .menus .menu {
+  width: 150px;
+}
