@@ -1,20 +1,20 @@
 import React from 'react';
 
-import { Menu, Icon } from 'antd';
+import { Menu } from 'antd';
 import { IMenuItem, OwnPropsIMenuItem } from './../../interfaces/IMenuItem';
+
+import './styles.css';
 
 export default function MenuComponent({ menuItem }: OwnPropsIMenuItem): any {
 
-  menuItem.map((el: IMenuItem) => console.log(el.id))
-
   return (
 
-    <Menu mode="inline" defaultSelectedKeys={['' + menuItem.length]}>
+    <Menu mode="inline" defaultSelectedKeys={['' + menuItem.length]} className="customclass">
 
       {
         menuItem.map((element: IMenuItem) => (
           <Menu.Item key={element.id}>
-            <Icon type={element.icon} />
+            {element.icon}
             <span className="nav-text">{element.text}</span>
           </Menu.Item>
         ))

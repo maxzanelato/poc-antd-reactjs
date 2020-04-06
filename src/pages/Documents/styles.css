@@ -12,6 +12,13 @@
 
 .ant-layout-header .header-container {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ant-layout-header .header-container .header-row {
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -66,12 +73,17 @@
 
 .ant-layout-content {
   background: #f0f5fa;
-  color: #fff;
   line-height: 120px;
+  color: #A0AFBC;
+}
+
+.ant-menu:not(.ant-menu-horizontal) {
+  background-color: unset;
+  color: #A0AFBC;
 }
 
 .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
-  background-color: unset;
+  color: #1890ff;
 }
 
 .footer {

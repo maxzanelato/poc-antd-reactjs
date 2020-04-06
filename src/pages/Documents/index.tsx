@@ -3,22 +3,27 @@ import React from 'react';
 import 'antd/dist/antd.css';
 import './styles.css';
 
-import logoFooter from '../../assets/logo-footer-bry.png';
-import avatar from '../../assets/avatar.png';
-import logoHeader from '../../assets/logo-header-bry-signer.png';
+import MenuComponent from './../../components/MenuComponent';
+import UploadComponent from './../../components/UploadComponent';
 
-import MenuComponent from './../../components/Menu/index';
 import { IMenuItem } from './../../interfaces/IMenuItem';
 
-import { Layout, Icon, Button } from 'antd';
+import Avatar from "../../assets/avatar.png";
+import LogoFooter from '../../assets/logo-footer-bry.png';
+import LogoHeader from '../../assets/logo-header-bry-signer.png';
+
+import { Layout, Button } from 'antd';
+
+import { BellOutlined, FileTextOutlined, EditOutlined, DownOutlined, LayoutOutlined, SlidersOutlined, LogoutOutlined } from '@ant-design/icons';
+
 const { Header, Content, Footer, Sider } = Layout;
 
 export default function Documents(): any {
   const x = new Array<IMenuItem>();
-  x.push({ id: 1, icon: 'file-text', text: 'DOCUMENTOS' });
-  x.push({ id: 2, icon: 'layout', text: 'MODELOS' });
-  x.push({ id: 3, icon: 'sliders', text: 'CONFIGURAÇÕES' })
-  x.push({ id: 4, icon: 'logout', text: 'SAIR' });
+  x.push({ id: 1, icon: <FileTextOutlined />, text: 'DOCUMENTOS' });
+  x.push({ id: 2, icon: <LayoutOutlined />, text: 'MODELOS' });
+  x.push({ id: 3, icon: <SlidersOutlined />, text: 'CONFIGURAÇÕES' })
+  x.push({ id: 4, icon: <LogoutOutlined />, text: 'SAIR' });
 
   return (
 
@@ -38,13 +43,12 @@ export default function Documents(): any {
         >
           <div className='sider-container'>
 
-            <img src={avatar} alt='Avatar' />
+            <img src={Avatar} alt='Avatar' />
             <span className='name-avatar'>João da Silva</span>
             <span className='afiliation-avatar'>
               Conta BRy Tecnologia
-              <Icon type="down" style={{ color: "#A0AFBC", fontSize: 12, paddingLeft: 5 }} />
+              <DownOutlined style={{ color: "#A0AFBC", fontSize: 12, paddingLeft: 5 }} />
             </span>
-
 
             <MenuComponent menuItem={x} />
 
@@ -54,18 +58,28 @@ export default function Documents(): any {
         <Layout>
           <Header>
             <div className='header-container'>
-              <div>
-                <img src={logoHeader} alt='Logo do BRy Signer' />
-              </div>
+              <div className='header-row'>
+                <div>
+                  <img src={LogoHeader} alt='Logo do BRy Signer' />
+                </div>
 
-              <div>
-                <Button type="primary" icon="edit">NOVA ASSINATURA</Button>
-                <Button type="link" icon="bell"></Button>
+                <div>
+                  <Button type="primary">
+                    <EditOutlined />
+                    NOVA ASSINATURA
+                  </Button>
+                  <Button type="link">
+                    <BellOutlined />
+                  </Button>
+                </div>
+              </div>
+              <div className='header-row'>
+                <UploadComponent />
               </div>
             </div>
           </Header>
-          <Content style={{ margin: '24px 16px 0' }}>
-            <div style={{ padding: 24, background: '#fff', minHeight: 360, height: '80vh' }}>content</div>
+          <Content style={{ margin: '100px 16px 0' }}>
+            <div style={{ padding: 24, background: '#fff', height: '100%' }}>content</div>
           </Content>
           <Footer className='footer'>
             <div className='menus'>
@@ -77,7 +91,7 @@ export default function Documents(): any {
               </div>
             </div>
             <div className='logo'>
-              <img src={logoFooter} alt='Logo da BRy Tecnologia' />
+              <img src={LogoFooter} alt='Logo da BRy Tecnologia' />
             </div>
           </Footer>
         </Layout>
