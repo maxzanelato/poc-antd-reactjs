@@ -77,6 +77,24 @@
   color: #A0AFBC;
 }
 
+.ant-layout-content .content-container {
+  padding: 24px;
+  background-color: #fff;
+  height: 100%
+}
+
+.ant-layout-content .content-container .content-header {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 36px;
+  border-bottom: 1px solid #BCC9D5;
+}
+
+.ant-layout-content .content-container .content-main {
+  padding-top: 15px;
+}
+
 .ant-menu:not(.ant-menu-horizontal) {
   background-color: unset;
   color: #A0AFBC;
