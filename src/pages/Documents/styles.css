@@ -75,6 +75,7 @@
   background: #f0f5fa;
   line-height: 120px;
   color: #A0AFBC;
+  min-height: auto;
 }
 
 .ant-layout-content .content-container {

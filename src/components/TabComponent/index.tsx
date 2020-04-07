@@ -30,7 +30,6 @@ export default function ({ tab }: OwnPropsITabHeaderItem) {
             }
             key={element.id.toString()}
           >
-            Tab Content {element.id.toString()}
             {element.content}
           </TabPane>
         ))

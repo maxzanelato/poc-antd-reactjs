@@ -5,6 +5,7 @@ import './styles.css';
 
 import TabComponent from '../../components/TabComponent';
 import MenuComponent from './../../components/MenuComponent';
+import TableComponent from './../../components/TableComponent';
 import UploadComponent from './../../components/UploadComponent';
 
 import { IMenuItem } from './../../interfaces/IMenuItem';
@@ -44,12 +45,12 @@ export default function Documents(): any {
   menuItem.push({ id: 4, icon: <LogoutOutlined />, text: 'SAIR' });
 
   const tabs = new Array<ITabHeaderItem>();
-  tabs.push({ id: 1, number: '72', text: 'Documentos', icon: <CheckOutlined style={{ fontSize: 16 }} />, content: 'Documento 1' });
-  tabs.push({ id: 2, number: '06', text: 'Pendentes', icon: <FileSyncOutlined style={{ fontSize: 16 }} />, content: 'Pendentes 1' });
-  tabs.push({ id: 3, number: '32', text: 'Finalizados', icon: <FileProtectOutlined style={{ fontSize: 16 }} />, content: 'Documento 1' });
-  tabs.push({ id: 4, number: '02', text: 'Rejeitados', icon: <FileExclamationOutlined style={{ fontSize: 16 }} />, content: 'Pendentes 1' });
-  tabs.push({ id: 5, number: '30', text: 'Cancelados', icon: <StopOutlined style={{ fontSize: 16 }} />, content: 'Documento 1' });
-  tabs.push({ id: 6, number: '02', text: 'Rascunhos', icon: <ProfileOutlined style={{ fontSize: 16 }} />, content: 'Pendentes 1' });
+  tabs.push({ id: 1, number: '72', text: 'Documentos', icon: <CheckOutlined style={{ fontSize: 16 }} />, content: <TableComponent /> });
+  tabs.push({ id: 2, number: '06', text: 'Pendentes', icon: <FileSyncOutlined style={{ fontSize: 16 }} />, content: <TableComponent /> });
+  tabs.push({ id: 3, number: '32', text: 'Finalizados', icon: <FileProtectOutlined style={{ fontSize: 16 }} />, content: <TableComponent /> });
+  tabs.push({ id: 4, number: '02', text: 'Rejeitados', icon: <FileExclamationOutlined style={{ fontSize: 16 }} />, content: <TableComponent /> });
+  tabs.push({ id: 5, number: '30', text: 'Cancelados', icon: <StopOutlined style={{ fontSize: 16 }} />, content: <TableComponent /> });
+  tabs.push({ id: 6, number: '02', text: 'Rascunhos', icon: <ProfileOutlined style={{ fontSize: 16 }} />, content: <TableComponent /> });
 
   return (
 
@@ -114,7 +115,7 @@ export default function Documents(): any {
 
               <div className='content-main'>
 
-                <TabComponent tab={tabs}></TabComponent>
+                <TabComponent tab={tabs} />
 
               </div>
 
