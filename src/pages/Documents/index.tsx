@@ -105,7 +105,7 @@ export default function Documents(): any {
               </div>
             </div>
           </Header>
-          <Content style={{ margin: '100px 16px 0' }}>
+          <Content style={{ margin: '75px 16px 0' }}>
 
             <div className='content-container'>
 

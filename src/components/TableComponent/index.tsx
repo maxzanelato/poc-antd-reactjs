@@ -1,13 +1,14 @@
 import React from 'react';
 
-import { Table, Tag, Popover } from 'antd';
+import { Table, Tag, Popover, Input } from 'antd';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import update from 'immutability-helper';
 
-import { EditOutlined, DeleteOutlined, MoreOutlined } from '@ant-design/icons';
+import { EditOutlined, DeleteOutlined, MoreOutlined, SearchOutlined, DownOutlined } from '@ant-design/icons';
 
 import ShowConfirm from './../ModalComponent';
+import AdvancedSearch from './../AdvancedSearch';
 
 const type = 'DragbleBodyRow';
 
@@ -163,21 +164,36 @@ class DragSortingTable extends React.Component {
     };
 
     return (
-      <DndProvider backend={HTML5Backend}>
-        <Table
-          columns={columns}
-          dataSource={this.state.data}
-          components={this.components}
-          rowSelection={rowSelection}
-          size="small"
+      <>
 
-          scroll={{ x: undefined, y: 300 }}
-          onRow={(record, index) => ({
-            index,
-            moveRow: this.moveRow,
-          }) as any}
+        <Input
+          placeholder="Pesquisar"
+          size="large"
+          prefix={<SearchOutlined className="site-form-item-icon" />}
+          suffix={
+            <Popover content={<AdvancedSearch />} trigger="click" placement="bottomRight" overlayStyle={{
+              width: "74vw"
+            }}>
+              <DownOutlined />
+            </Popover>
+          }
         />
-      </DndProvider>
+
+        <DndProvider backend={HTML5Backend}>
+          <Table
+            columns={columns}
+            dataSource={this.state.data}
+            components={this.components}
+            rowSelection={rowSelection}
+            size="small"
+            scroll={{ x: 'auto', y: 300 }}
+            onRow={(record, index) => ({
+              index,
+              moveRow: this.moveRow,
+            }) as any}
+          />
+        </DndProvider>
+      </>
     );
   }
 }
