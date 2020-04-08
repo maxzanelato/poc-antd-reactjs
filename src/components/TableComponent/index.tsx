@@ -181,6 +181,7 @@ class DragSortingTable extends React.Component {
 
         <DndProvider backend={HTML5Backend}>
           <Table
+            style={{ paddingTop: 30 }}
             columns={columns}
             dataSource={this.state.data}
             components={this.components}
