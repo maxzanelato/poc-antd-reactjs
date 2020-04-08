@@ -16,6 +16,10 @@
   justify-content: space-between;
 }
 
+.ant-layout-header .header-container-mob {
+  display: none;
+}
+
 .ant-layout-header .header-container .header-row {
   display: flex;
   flex-direction: row;
@@ -71,6 +75,10 @@
   padding-left: 25px;
 }
 
+.ant-layout-sider .sider-container .button-new-signature {
+  display: none;
+}
+
 .ant-layout-content {
   background: #f0f5fa;
   line-height: 120px;
@@ -119,4 +127,63 @@
 
 .footer .menus .menu {
   width: 150px;
+}
+
+@media (max-width: 1024px) {
+
+  .ant-layout-sider-zero-width-trigger {
+    display: none;
+  }
+
+  .logo-header-mob {
+    display: block;
+  }
+
+  .ant-layout-header .header-container {
+    display: none;
+  }
+
+  .ant-layout-header .header-container-mob {
+    display: flex;
+    height: 64px;
+    background: #009CDA;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    color: #FFFFFF;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0px 20px;
+    font-size: 20px;
+  }
+
+  .ant-layout-header .header-container-mob h1 {
+    color: #FFFFFF;
+  }
+
+  .ant-layout-header .header-container-mob .button-bell {
+    color: #FFFFFF;
+  }
+
+  .ant-layout-sider .sider-container img {
+    padding-top: 100px;
+  }
+
+  .ant-layout-sider .sider-container .button-new-signature {
+    display: block;
+    width: 100%;
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 425px) {
+  .ant-layout-content .content-container .content-header {
+    display: none;
+  }
+
+  .footer .menus {
+    flex-direction: column;
+  }
 }

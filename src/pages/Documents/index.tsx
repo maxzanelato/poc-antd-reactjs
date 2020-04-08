@@ -1,7 +1,9 @@
-import React from 'react';
+import React, { useState, useLayoutEffect } from 'react';
 
 import 'antd/dist/antd.css';
 import './styles.css';
+
+import { MenuOutlined } from '@ant-design/icons';
 
 import TabComponent from '../../components/TabComponent';
 import MenuComponent from './../../components/MenuComponent';
@@ -10,9 +12,9 @@ import UploadComponent from './../../components/UploadComponent';
 
 import { IMenuItem } from './../../interfaces/IMenuItem';
 
-import Avatar from "../../assets/avatar.png";
-import LogoFooter from '../../assets/logo-footer-bry.png';
-import LogoHeader from '../../assets/logo-header-bry-signer.png';
+import avatar from "../../assets/avatar.png";
+import logoFooter from '../../assets/logo-footer-bry.png';
+import logoHeader from '../../assets/logo-header-bry-signer.png';
 
 import { Layout, Button } from 'antd';
 
@@ -38,6 +40,17 @@ const { Header, Content, Footer, Sider } = Layout;
 
 export default function Documents(): any {
 
+  const [width, setWidth] = useState(0);
+  const [collapsed, setCollapsed] = useState(width < 1024);
+
+  useLayoutEffect(() => {
+    function updateSize() {
+      setWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', updateSize);
+    updateSize();
+  }, []);
+
   const menuItem = new Array<IMenuItem>();
   menuItem.push({ id: 1, icon: <FileTextOutlined />, text: 'DOCUMENTOS' });
   menuItem.push({ id: 2, icon: <LayoutOutlined />, text: 'MODELOS' });
@@ -59,7 +72,8 @@ export default function Documents(): any {
         <Sider
           breakpoint="lg"
           collapsedWidth="0"
-          width='280'
+          width={width <= 425 ? '100%' : '280'}
+          collapsed={width <= 1024 ? collapsed : false}
 
           onBreakpoint={broken => {
             console.log(broken);
@@ -70,14 +84,25 @@ export default function Documents(): any {
         >
           <div className='sider-container'>
 
-            <img src={Avatar} alt='Avatar' />
+            <img src={avatar} alt='Avatar' />
             <span className='name-avatar'>João da Silva</span>
             <span className='afiliation-avatar'>
               Conta BRy Tecnologia
               <DownOutlined style={{ color: "#A0AFBC", fontSize: 12, paddingLeft: 5 }} />
             </span>
 
+            <span className='button-new-signature'>
+              <Button type="primary">
+                <EditOutlined />
+                    NOVA ASSINATURA
+                  </Button>
+            </span>
+
             <MenuComponent menuItem={menuItem} />
+
+            <div className='logo-header-mob'>
+              <img src={logoHeader} alt='Logo do BRy Signer' />
+            </div>
 
           </div>
 
@@ -86,8 +111,8 @@ export default function Documents(): any {
           <Header>
             <div className='header-container'>
               <div className='header-row'>
-                <div>
-                  <img src={LogoHeader} alt='Logo do BRy Signer' />
+                <div className='logoHeader'>
+                  <img src={logoHeader} alt='Logo do BRy Signer' />
                 </div>
 
                 <div>
@@ -104,8 +129,13 @@ export default function Documents(): any {
                 <UploadComponent />
               </div>
             </div>
+            <div className='header-container-mob'>
+              <MenuOutlined onClick={() => setCollapsed(!collapsed)} />
+              <h1>Documentos</h1>
+              <BellOutlined className='button-bell' />
+            </div>
           </Header>
-          <Content style={{ margin: '75px 16px 0' }}>
+          <Content style={width <= 425 ? { margin: 0 } : { margin: '75px 16px 0' }}>
 
             <div className='content-container'>
 
@@ -132,7 +162,7 @@ export default function Documents(): any {
               </div>
             </div>
             <div className='logo'>
-              <img src={LogoFooter} alt='Logo da BRy Tecnologia' />
+              <img src={logoFooter} alt='Logo da BRy Tecnologia' />
             </div>
           </Footer>
         </Layout>
