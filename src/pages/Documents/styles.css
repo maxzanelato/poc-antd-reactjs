@@ -129,6 +129,10 @@
   width: 150px;
 }
 
+.logo-header-mob {
+  display: none;
+}
+
 @media (max-width: 1024px) {
 
   .ant-layout-sider-zero-width-trigger {
