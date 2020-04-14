@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/poc-antd-reactjs/static/css/main.b8f5f1be.chunk.css",
+    "main.js": "/poc-antd-reactjs/static/js/main.9ef066fc.chunk.js",
+    "main.js.map": "/poc-antd-reactjs/static/js/main.9ef066fc.chunk.js.map",
+    "runtime-main.js": "/poc-antd-reactjs/static/js/runtime-main.13fb57ab.js",
+    "runtime-main.js.map": "/poc-antd-reactjs/static/js/runtime-main.13fb57ab.js.map",
+    "static/css/2.ab081279.chunk.css": "/poc-antd-reactjs/static/css/2.ab081279.chunk.css",
+    "static/js/2.e76a1752.chunk.js": "/poc-antd-reactjs/static/js/2.e76a1752.chunk.js",
+    "static/js/2.e76a1752.chunk.js.map": "/poc-antd-reactjs/static/js/2.e76a1752.chunk.js.map",
+    "index.html": "/poc-antd-reactjs/index.html",
+    "precache-manifest.5bb6e0d1cdfa1489e134c96f27a0844d.js": "/poc-antd-reactjs/precache-manifest.5bb6e0d1cdfa1489e134c96f27a0844d.js",
+    "service-worker.js": "/poc-antd-reactjs/service-worker.js",
+    "static/css/2.ab081279.chunk.css.map": "/poc-antd-reactjs/static/css/2.ab081279.chunk.css.map",
+    "static/css/main.b8f5f1be.chunk.css.map": "/poc-antd-reactjs/static/css/main.b8f5f1be.chunk.css.map",
+    "static/js/2.e76a1752.chunk.js.LICENSE.txt": "/poc-antd-reactjs/static/js/2.e76a1752.chunk.js.LICENSE.txt",
+    "static/media/avatar.png": "/poc-antd-reactjs/static/media/avatar.bbc9144f.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.13fb57ab.js",
+    "static/css/2.ab081279.chunk.css",
+    "static/js/2.e76a1752.chunk.js",
+    "static/css/main.b8f5f1be.chunk.css",
+    "static/js/main.9ef066fc.chunk.js"
+  ]
+}
